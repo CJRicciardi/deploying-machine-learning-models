@@ -28,7 +28,7 @@ FEATURES = ['MSSubClass', 'MSZoning', 'Neighborhood', 'OverallQual',
 
 
 def save_pipeline(*, pipeline_to_persist) -> None:
-    """Persist the pipeline."""
+    """Persist the pipeline"""
 
     save_file_name = 'regression_model.pkl'
     save_path = TRAINED_MODEL_DIR / save_file_name
@@ -36,19 +36,19 @@ def save_pipeline(*, pipeline_to_persist) -> None:
 
     print('saved pipeline')
 
-
 def run_training() -> None:
-    """Train the model."""
+    """Train the model"""
 
     # read training data
     data = pd.read_csv(TRAINING_DATA_FILE)
 
-    # divide train and test
+    # divide train & test
     X_train, X_test, y_train, y_test = train_test_split(
         data[FEATURES],
         data[TARGET],
         test_size=0.1,
-        random_state=0)  # we are setting the seed here
+        random_state=0
+    )
 
     # transform the target
     y_train = np.log(y_train)

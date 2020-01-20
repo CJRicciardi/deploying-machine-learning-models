@@ -29,12 +29,11 @@ CATEGORICAL_VARS = ['MSZoning', 'Neighborhood', 'RoofStyle', 'MasVnrType',
                     'KitchenQual', 'FireplaceQu', 'GarageType', 'GarageFinish',
                     'PavedDrive']
 
-
 price_pipe = Pipeline(
     [
         ('categorical_imputer',
             pp.CategoricalImputer(variables=CATEGORICAL_VARS_WITH_NA)),
-        ('numerical_inputer',
+        ('numerical_imputer',
             pp.NumericalImputer(variables=NUMERICAL_VARS_WITH_NA)),
         ('temporal_variable',
             pp.TemporalVariableEstimator(
@@ -50,7 +49,7 @@ price_pipe = Pipeline(
             pp.LogTransformer(variables=NUMERICALS_LOG_VARS)),
         ('drop_features',
             pp.DropUnecessaryFeatures(variables_to_drop=DROP_FEATURES)),
-        ('scaler', MinMaxScaler()),
-        ('Linear_model', Lasso(alpha=0.005, random_state=0))
+        ('scalar', MinMaxScaler()),
+        ('Linear_Model', Lasso(alpha=0.005, random_state=0))
     ]
 )

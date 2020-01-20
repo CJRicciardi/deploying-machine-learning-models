@@ -4,7 +4,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 
 class CategoricalImputer(BaseEstimator, TransformerMixin):
-    """Categorical data missing value imputer."""
+    """Categorical data missing value imputer"""
 
     def __init__(self, variables=None) -> None:
         if not isinstance(variables, list):
@@ -13,13 +13,13 @@ class CategoricalImputer(BaseEstimator, TransformerMixin):
             self.variables = variables
 
     def fit(self, X: pd.DataFrame, y: pd.Series = None
-            ) -> 'CategoricalImputer':
-        """Fit statement to accomodate the sklearn pipeline."""
+           ) -> 'CategoricalImputer':
+        """Fit statement to accomodate the sklearn pipeline"""
 
         return self
 
     def transform(self, X: pd.DataFrame) -> pd.DataFrame:
-        """Apply the transforms to the dataframe."""
+        """Apply the transforms to the dataframe"""
 
         X = X.copy()
         for feature in self.variables:
@@ -29,7 +29,7 @@ class CategoricalImputer(BaseEstimator, TransformerMixin):
 
 
 class NumericalImputer(BaseEstimator, TransformerMixin):
-    """Numerical missing value imputer."""
+    """Numerical missing value imputer"""
 
     def __init__(self, variables=None):
         if not isinstance(variables, list):
@@ -38,7 +38,7 @@ class NumericalImputer(BaseEstimator, TransformerMixin):
             self.variables = variables
 
     def fit(self, X, y=None):
-        # persist mode in a dictionary
+        #persist mode in a dictionary
         self.imputer_dict_ = {}
         for feature in self.variables:
             self.imputer_dict_[feature] = X[feature].mode()[0]
@@ -52,7 +52,7 @@ class NumericalImputer(BaseEstimator, TransformerMixin):
 
 
 class TemporalVariableEstimator(BaseEstimator, TransformerMixin):
-    """Temporal variable calculator."""
+    """Temporal variable calculator"""
 
     def __init__(self, variables=None, reference_variable=None):
         if not isinstance(variables, list):
@@ -85,13 +85,13 @@ class RareLabelCategoricalEncoder(BaseEstimator, TransformerMixin):
             self.variables = variables
 
     def fit(self, X, y=None):
-        # persist frequent labels in dictionary
+        # persist frequent labels in a dictionary
         self.encoder_dict_ = {}
 
         for var in self.variables:
             # the encoder will learn the most frequent categories
             t = pd.Series(X[var].value_counts() / np.float(len(X)))
-            # frequent labels:
+            # frequent labels
             self.encoder_dict_[var] = list(t[t >= self.tol].index)
 
         return self
