@@ -1,6 +1,7 @@
 import pathlib
 
 
+# Establish root directory
 PACKAGE_ROOT = pathlib.Path(__file__).resolve().parent
 TRAINING_MODEL_DIR = PACKAGE_ROOT / 'trained_models'
 DATASET_DIR = PACKAGE_ROOT /'datasets'
