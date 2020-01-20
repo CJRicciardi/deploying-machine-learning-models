@@ -22,5 +22,6 @@ PIPELINE_NAME = 'lasso_regression'
 price_pipe = Pipeline(
     [
         ('categorical_imputer',
-         pp.CategoricalImputer(variables=CATEGORICAL_VARS)),
-    ])
+         pp.CategoricalImputer(variables=CATEGORICAL_VARS))
+    ]
+)
