@@ -3,7 +3,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 
 class LogTransformer(BaseEstimator, TransformerMixin):
-    """Logarithm transformer."""
+    """Logarithm transformer"""
 
     def __init__(self, variables=None):
         if not isinstance(variables, list):
