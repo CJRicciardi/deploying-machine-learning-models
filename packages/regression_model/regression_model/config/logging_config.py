@@ -7,7 +7,7 @@ from regression_model.config import config
 
 # Multiple calls to logging.getLogger('someLogger') return a
 # reference to the same logger object.  This is true not only
-# within the same module, but also across modules as long as
+# within the same modulem but also across modules as long as
 # it is in the same Python interpreter process.
 
 FORMATTER = logging.Formatter(

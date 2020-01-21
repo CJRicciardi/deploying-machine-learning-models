@@ -8,7 +8,6 @@ from regression_model import __version__ as _version
 
 import logging
 
-
 _logger = logging.getLogger(__name__)
 
 pipeline_file_name = f'{config.PIPELINE_SAVE_FILE}{_version}.pkl'

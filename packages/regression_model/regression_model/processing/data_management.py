@@ -53,5 +53,5 @@ def remove_old_pipelines(*, files_to_keep) -> None:
     """
 
     for model_file in config.TRAINED_MODEL_DIR.iterdir():
-        if model_file.name not in [files_to_keep, '__init__.py']:
+        if model_file.name not in [files_to_keep, '__init__,py']:
             model_file.unlink()
