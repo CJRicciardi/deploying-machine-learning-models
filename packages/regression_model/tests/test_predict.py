@@ -1,12 +1,12 @@
 import math
 
 from regression_model.predict import make_prediction
-from regression_model.processing.data_management import load_dataset
+from regression_model.processing.data_management import load_datasets
 
 
 def test_make_single_prediction():
     # Given
-    test_data = load_dataset(file_name='test.csv')
+    test_data = load_datasets(file_name='test.csv')
     single_test_json = test_data[0:1].to_json(orient='records')
 
     # When

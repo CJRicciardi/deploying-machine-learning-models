@@ -60,7 +60,7 @@ class TemporalVariableEstimator(BaseEstimator, TransformerMixin):
         else:
             self.variables = variables
 
-        self.reference_variables = reference_variable
+        self.reference_variable = reference_variable
 
     def fit(self, X, y=None):
         # we need this step to fit the sklearn pipeline
@@ -69,7 +69,7 @@ class TemporalVariableEstimator(BaseEstimator, TransformerMixin):
     def transform(self, X):
         X = X.copy()
         for feature in self.variables:
-            X[feature] = X[self.reference_variables] - X[feature]
+            X[feature] = X[self.reference_variable] - X[feature]
 
         return X
 
