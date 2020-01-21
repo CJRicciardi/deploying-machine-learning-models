@@ -4,7 +4,7 @@ import pandas as pd
 
 
 def validate_inputs(input_data: pd.DataFrame) -> pd.DataFrame:
-    """Check model inputs for unprocessable values."""
+    """Check model inputs for unprocessable values"""
 
     validated_data = input_data.copy()
 
@@ -21,7 +21,7 @@ def validate_inputs(input_data: pd.DataFrame) -> pd.DataFrame:
     # check for values <= 0 for the log transformed variables
     if (input_data[config.NUMERICALS_LOG_VARS] <= 0).any().any():
         vars_with_neg_values = config.NUMERICALS_LOG_VARS[
-            (input_data[config.NUMERICALS_LOG_VARS] <= 0).any()]
+            (input_data[config.NUMERICALS_LOG_VARS] <=0).any()]
         validated_data = validated_data[
             validated_data[vars_with_neg_values] > 0]
 
