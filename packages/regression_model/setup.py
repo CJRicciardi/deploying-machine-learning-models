@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/user/bin/env python
 # -*- coding: utf-8 -*-
 
 import io
@@ -8,14 +8,12 @@ from pathlib import Path
 from setuptools import find_packages, setup
 
 
-# Package meta-data.
+# Package meta-data
 NAME = 'regression_model'
-DESCRIPTION = 'Train and deploy regression model.'
-URL = 'your github project'
-EMAIL = 'your_email@email.com'
-AUTHOR = 'Your name'
+DESCRIPTION = 'Train and deploy regression model'
+URL = 'https://github.com/Nburkhal/deploying-machine-learning-models'
+AUTHOR = 'Nick Burkhalter'
 REQUIRES_PYTHON = '>=3.6.0'
-
 
 # What packages are required for this module to be executed?
 def list_reqs(fname='requirements.txt'):
