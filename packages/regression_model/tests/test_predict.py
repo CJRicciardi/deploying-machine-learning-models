@@ -1,7 +1,7 @@
 import math
 
-from regression_model.predict import make_prediction
-from regression_model.processing.data_management import load_dataset
+import regression_model.predict.make_prediction as make_prediction
+import regression_model.processing.data_management.load_dataset as load_dataset
 
 
 def test_make_single_prediction():
