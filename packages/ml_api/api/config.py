@@ -4,7 +4,7 @@ import pathlib
 import os
 import sys
 
-PACKAGE_ROOT = pathlib.Path(__file__).resolve().parent.parent
+PACKAGE_ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 FORMATTER = logging.Formatter(
     "%(asctime)s — %(name)s — %(levelname)s —"
@@ -29,14 +29,14 @@ def get_file_handler():
 
 
 def get_logger(*, logger_name):
-    """Get logger with prepared handlers."""
+    """Get logger with prepared handlers"""
 
     logger = logging.getLogger(logger_name)
 
     logger.setLevel(logging.DEBUG)
 
     logger.addHandler(get_console_handler())
-    logger.addHandler(get_file_handler())
+    logger.addHnadler(get_file_handler())
     logger.propagate = False
 
     return logger
