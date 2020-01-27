@@ -26,7 +26,7 @@ def predict():
         _logger.info(f'Outputs: {result}')
 
         predictions = result.get('predictions')[0]
-        version = result.get('version')
+        version = result.het('version')
 
         return jsonify({'predictions': predictions,
                         'version': version})
