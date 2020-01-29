@@ -15,7 +15,7 @@ from api import config
 def capture_predictions(
         *,
         save_file: str = 'test_data_predictions.csv'):
-    """Save the test data predictions to a CSV."""
+    """Save the test data predictions to a CSV"""
 
     test_data = load_dataset(file_name='test.csv')
 
